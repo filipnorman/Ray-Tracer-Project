@@ -42,6 +42,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Canvas.h" />
     <ClInclude Include="Colour.h" />
     <ClInclude Include="Enviroment.h" />
     <ClInclude Include="Projectile.h" />

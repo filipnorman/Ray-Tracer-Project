@@ -1,4 +1,6 @@
 #include "FTuple.h"
+#include "Colour.h"
+#include "Canvas.h"
 #include "gtest/gtest.h"
 #include "mathFunctions/FloatOp.h"
 
@@ -142,6 +144,62 @@ TEST(TuplesOperation, CrossProductCheck) {
 }
 
 //=====================Colours==============================//
+
+TEST(ColourObject, ColourCheck) {
+	Colour c = Colour(-0.5f, 0.4f, 1.7f);
+	
+	ASSERT_TRUE(equal(c.red(), -0.5f));
+	ASSERT_TRUE(equal(c.green(), 0.4f));
+	ASSERT_TRUE(equal(c.blue(), 1.7f));
+}
+
+TEST(ColourObject, AdditionCheck) {
+	Colour c1 = Colour(0.9f, 0.6f, 0.75f);
+	Colour c2 = Colour(0.7f, 0.1f, 0.25f);
+
+	//Limiting the colour prematurely will cause unwanted colours. Only simplify to 0 and 1 as the final calculation.
+	ASSERT_TRUE(c1 + c2 == Colour(1.6f, 0.7f, 1.f));
+}
+
+TEST(ColourObject, SubtractionCheck) {
+	Colour c1 = Colour(0.9f, 0.6f, 0.75f);
+	Colour c2 = Colour(0.7f, 0.1f, 0.25f);
+
+	ASSERT_TRUE(c1 - c2 == Colour(0.2f, 0.5f, 0.5f));
+}
+
+TEST(ColourObject, ScalarMultiplicationCheck) {
+	Colour c = Colour(0.2f, 0.3f, 0.4f);
+
+	ASSERT_TRUE((c * 2.f) == Colour(0.4f, 0.6f, 0.8f));
+}
+
+TEST(ColourObject, MultiplicationCheck) {
+	Colour c1 = Colour(1.f, 0.2f, 0.4f);
+	Colour c2 = Colour(0.9f, 1.f, 0.1f);
+
+	ASSERT_TRUE(c1 * c2 == Colour(0.9f, 0.2f, 0.04f));
+}
+
+//=============================Canvas Testing==========================================//
+
+TEST(CanvasObject, CanvasInitialisation) {
+	Canvas canvas = Canvas(10, 20);
+	ASSERT_EQ(10, canvas.m_width);
+	ASSERT_EQ(20, canvas.m_height);
+	ASSERT_TRUE( Colour(0.f,0.f,0.f) == canvas.getPixelColour(4, 5));
+	canvas.write_pixel(4, 5, Colour(1.f, 0.f, 0.f));
+	ASSERT_TRUE(Colour(1.f, 0.f, 0.f) == canvas.getPixelColour(4, 5));
+}
+
+TEST(CanvasObject, CanvasReadWrite) {
+	Canvas canvas = Canvas(10, 20);
+	ASSERT_TRUE(Colour(0.f, 0.f, 0.f) == canvas.getPixelColour(2, 3));
+	canvas.write_pixel(2, 3, Colour(1.f, 0.f, 0.f));
+	ASSERT_TRUE(Colour(1.f, 0.f, 0.f) == canvas.getPixelColour(2, 3));
+}
+
+
 
 
 

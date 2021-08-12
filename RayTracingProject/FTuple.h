@@ -7,7 +7,7 @@ class FTuple {
 		float x;
 		float y;
 		float z;
-		float w;
+		float w; 
 
 		//Constructor
 		FTuple(float x_, float y_, float z_, float w_) : x(x_), y(y_), z(z_), w(w_) {}

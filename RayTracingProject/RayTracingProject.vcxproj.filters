@@ -12,6 +12,7 @@
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="Enviroment.h" />
     <ClInclude Include="Colour.h" />
+    <ClInclude Include="Canvas.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

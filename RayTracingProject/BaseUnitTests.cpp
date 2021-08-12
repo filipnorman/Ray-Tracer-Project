@@ -183,7 +183,7 @@ TEST(ColourObject, MultiplicationCheck) {
 
 //=============================Canvas Testing==========================================//
 
-TEST(CanvasObject, CanvasInitialisation) {
+TEST(CanvasObject, CanvasInitialisationCheck) {
 	Canvas canvas = Canvas(10, 20);
 	ASSERT_EQ(10, canvas.m_width);
 	ASSERT_EQ(20, canvas.m_height);
@@ -192,11 +192,20 @@ TEST(CanvasObject, CanvasInitialisation) {
 	ASSERT_TRUE(Colour(1.f, 0.f, 0.f) == canvas.getPixelColour(4, 5));
 }
 
-TEST(CanvasObject, CanvasReadWrite) {
+TEST(CanvasObject, CanvasReadWriteCheck) {
 	Canvas canvas = Canvas(10, 20);
 	ASSERT_TRUE(Colour(0.f, 0.f, 0.f) == canvas.getPixelColour(2, 3));
 	canvas.write_pixel(2, 3, Colour(1.f, 0.f, 0.f));
 	ASSERT_TRUE(Colour(1.f, 0.f, 0.f) == canvas.getPixelColour(2, 3));
+}
+
+TEST(CanvasObject, ConstructionOfPPMContainerCheck) {
+	Canvas canvas = Canvas(5, 3);
+
+	PPMContainer container = canvas.canvasToPPM();
+
+	ASSERT_TRUE(container.magicNumber == std::string("P3\n5 3\n255\n"));
+
 }
 
 

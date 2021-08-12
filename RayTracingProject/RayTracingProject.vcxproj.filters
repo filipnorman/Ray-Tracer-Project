@@ -5,6 +5,8 @@
     <ClCompile Include="FTuple.cpp" />
     <ClCompile Include="mathFunctions\FloatOp.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="fileHandlers\PPMContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FTuple.h" />
@@ -13,6 +15,7 @@
     <ClInclude Include="Enviroment.h" />
     <ClInclude Include="Colour.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="fileHandlers\PPMContainer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

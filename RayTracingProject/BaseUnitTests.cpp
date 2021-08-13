@@ -208,6 +208,25 @@ TEST(CanvasObject, ConstructionOfPPMContainerCheck) {
 
 }
 
+TEST(CanvasObject, PPMPixelDataCheck) {
+	Canvas canvas = Canvas(5, 5);
+	for (int y = 0; y < 5; y++) {
+		for (int x = 0; x < 10; x++) {
+			canvas.write_pixel(x, y, Colour(1, 0.8, 0.6));
+		}
+	}
+	PPMContainer container = canvas.canvasToPPM();
+
+	//This checks if the data contains the correct pixels and PPM row lengths, and if the array ends with a newline character
+	ASSERT_TRUE(container.arr_PixelData == std::string("255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204 \n" 
+		                                               "153 255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 \n"
+		                                               "204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 \n" 
+		                                               "255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204 \n"
+		                                               "153 255 204 153 255 204 153 \n"));
+}
+
+
+
 
 
 

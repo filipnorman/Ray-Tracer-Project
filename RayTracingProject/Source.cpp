@@ -17,11 +17,7 @@ int main(int argc, char** argv) {
 	testing::InitGoogleTest(&argc, argv);
 	
 
-
-	FTuple ree = FTuple(1.f, 2.f, 3.f, 4.f);
-
-	std::cout << "x: " << ree[0] << " y: " << ree[1] << " z: " << ree[2] << " w: " << ree[3] << std::endl;
-
+	/*
 	Canvas canvas = Canvas(900, 550);
 	
 	Enviroment env = Enviroment(vector(0.f, -0.1f, 0.f), vector(-0.01f, 0.f, 0.f));
@@ -38,7 +34,8 @@ int main(int argc, char** argv) {
 
 	PPMContainer ppm = canvas.canvasToPPM();
 
-	savePPM(ppm, "nicetry222");
+	savePPM(ppm, "imageGenerated");
+	*/
 	
 
 	return RUN_ALL_TESTS();

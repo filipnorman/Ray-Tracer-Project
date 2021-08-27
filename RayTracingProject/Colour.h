@@ -9,7 +9,7 @@ public:
 	Colour(float red, float green, float blue) : FTuple(red, green, blue, 0.f) {
 
 	}
-
+	 
 	Colour() : FTuple(0.f, 0.f, 0.f, 0.f) {
 
 	}

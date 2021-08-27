@@ -39,6 +39,7 @@
     <ClCompile Include="BaseUnitTests.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="fileHandlers\PPMContainer.cpp" />
+    <ClCompile Include="FMatrix.cpp" />
     <ClCompile Include="mathFunctions\FloatOp.cpp" />
     <ClCompile Include="FTuple.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -48,6 +49,7 @@
     <ClInclude Include="Colour.h" />
     <ClInclude Include="Enviroment.h" />
     <ClInclude Include="fileHandlers\PPMContainer.h" />
+    <ClInclude Include="FMatrix.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="mathFunctions\FloatOp.h" />
     <ClInclude Include="FTuple.h" />

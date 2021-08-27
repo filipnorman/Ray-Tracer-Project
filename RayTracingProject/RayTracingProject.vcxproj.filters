@@ -7,6 +7,7 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="fileHandlers\PPMContainer.cpp" />
+    <ClCompile Include="FMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FTuple.h" />
@@ -16,6 +17,7 @@
     <ClInclude Include="Colour.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="fileHandlers\PPMContainer.h" />
+    <ClInclude Include="FMatrix.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

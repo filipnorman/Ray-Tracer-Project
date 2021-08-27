@@ -3,7 +3,7 @@
 #include "mathFunctions/FloatOp.h"
 
 
-
+//Enivroment Class, Used To Demo The Integration of Vectors and Colour Implementations
 class Enviroment {
 public:
 

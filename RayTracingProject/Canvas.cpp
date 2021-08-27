@@ -20,6 +20,8 @@ PPMContainer Canvas::canvasToPPM()
 	return PPMContainer{ magicNumber.c_str() , pixelData.c_str()};
 }
 
+
+//Private method for converting a row of pixel data into ppm
 std::string Canvas::rowToPPM(int y) 
 {
 	Colour temp;

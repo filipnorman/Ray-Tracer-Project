@@ -1,8 +1,10 @@
 #include "FTuple.h"
+#include "FMatrix.h"
 #include "Colour.h"
 #include "Canvas.h"
 #include "gtest/gtest.h"
 #include "mathFunctions/FloatOp.h"
+#include <iostream>
 
 //====================Base Tuples Testing==================//
 TEST(BaseTuples, PointCheck) {
@@ -225,7 +227,34 @@ TEST(CanvasObject, PPMPixelDataCheck) {
 		                                               "153 255 204 153 255 204 153 \n"));
 }
 
+//Matrix Testing
 
+TEST(FMatrixObject, InitialisationCheck) {
+	FMatrix matrix = FMatrix(4 , 4);
+	ASSERT_TRUE(equal(matrix(0,0),0.f));
+
+	matrix(0, 1) = 3.f;
+	ASSERT_TRUE(equal(matrix(0, 1), 3.f));
+
+	// Theory Testing
+	float test = matrix(0, 1);
+	test -= 1;
+	ASSERT_TRUE(equal(matrix(0, 1), 3.f));
+
+	float& test2 = matrix(0, 1);
+	test2 -= 1;
+	ASSERT_TRUE(equal(matrix(0, 1), 2.f));
+	// End of theory testing
+
+	matrix(2, 3) = 4.53f;
+	matrix(2, 2) = 4.5f;
+	matrix(2, 1) = 302849.f;
+
+
+	std::cout << "NICE" << std::endl << matrix;
+
+
+}
 
 
 
